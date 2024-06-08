@@ -1,0 +1,21 @@
+
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// @use "./reset" as *;
+
+$poppins: "Poppins", sans-serif;
+
+//colors:-
+$light-grey: #393E46;
+$dark: #222831;
+$light: #f5f3f0;
+$orange: #FC4100;
+
+@function rem($pixels){
+    @if math.is-unitless($pixels){
+        @return math.div($pixels,16) + rem; 
+    } 
+    @else{
+        @error "there is a unit present in the value.";
+    }
+}
